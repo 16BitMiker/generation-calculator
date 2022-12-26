@@ -46,13 +46,23 @@ class WhatGen
 		
 	def myAge
 	
+		print %Q|\033c|
+	
+		puts  %q|Generation Calculator|
+		puts  %q|~|*30
+	
 		@gen.each_index do |n|
 			puts %Q|#{@gen[n][:range]} - #{@gen[n][:gen]}|
 		end
 		
-		puts %q|~|*30
+		puts  %q|~|*30
 		print %q|> what is your age? |
 		age = gets.chomp!
+		
+		if age.match(%r~q(?:uit)?~i)
+			puts %q|Quitting!|.red
+			exit
+		end
 		
 		if age.to_i > @oldest then
 			puts %q|>|+%Q| I don't think you are really #{age} so quitting :P|.red
