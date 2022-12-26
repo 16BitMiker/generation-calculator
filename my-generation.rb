@@ -61,7 +61,7 @@ class WhatGen
 		
 		@gen.each_index do |n|
 			if age >= @gen[n][:start] and age <= @gen[n][:end]					
-				puts %Q|> you are #{age} years old. You are from the '#{@gen[n][:gen]}' generation (#{@gen[n][:range]}).|.green
+				puts  %q|>|+%Q| you are #{age} years old. You are from the '#{@gen[n][:gen]}' generation (#{@gen[n][:range]}).|.green
 			end
 		end
 		
