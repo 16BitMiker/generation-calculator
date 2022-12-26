@@ -7,7 +7,7 @@ class WhatGen
 	def initialize 
 		
 		@gen = []
-		@oldest = 132
+		
 		
 		# loosley based on: (with tweaks from wikipedia)
 		# https://www.careerplanner.com/Career-Articles/Generations.cfm
@@ -39,6 +39,8 @@ class WhatGen
 			n += 1
 		
 		end
+		
+		@oldest = @gen[0][:end]
 		
 	end
 		
