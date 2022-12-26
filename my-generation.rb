@@ -46,6 +46,11 @@ class WhatGen
 		
 	def myAge
 	
+		@gen.each_index do |n|
+			puts %Q|#{@gen[n][:range]} - #{@gen[n][:gen]}|
+		end
+		
+		puts %q|~|*30
 		print %q|> what is your age? |
 		age = gets.chomp!
 		
