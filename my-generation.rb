@@ -22,9 +22,11 @@ class WhatGen
 			Xennials|1975-1984
 			Millennials|1985-1995
 			Generation Z|1996-2012
-			Generation Alpha|2013-2025
+			Generation Alpha|2013-%s
 		AGE
 		
+		ages = ages % Time.now.year
+				
 		n = 0
 		
 		ages.split(%r~\n~) do |line|
@@ -46,6 +48,7 @@ class WhatGen
 		
 	def myAge
 	
+		# clear screen
 		print %Q|\033c|
 	
 		puts  %q|Generation Calculator|
@@ -56,7 +59,7 @@ class WhatGen
 		end
 		
 		puts  %q|~|*30
-		print %q|> what is your age? |
+		print %q|> what is your age (q to quit)? |
 		age = gets.chomp!
 		
 		if age.match(%r~q(?:uit)?~i)
