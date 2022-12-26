@@ -52,7 +52,7 @@ class WhatGen
 			exit 69
 		end
 						
-		unless (age.to_s).match(%r~^\d+$~) then
+		unless age.match(%r~^\d+$~) then
 			puts %q|>|+%Q| You need to pick a number! :P|.red
 			exit 69
 		end
